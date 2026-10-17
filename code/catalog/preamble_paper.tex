@@ -1,0 +1,24 @@
+% N200 catalog, paper style: the paper preamble (ieeeconf, 10 pt; paper_helper, release_helper with n200_assets),
+% one column at \textwidth 505.89 pt as in Appendix G. Compile from the paper source root (build_catalog.py does).
+\documentclass[letterpaper,10pt,journal,twoside]{ieeeconf}
+\def\paperentryclassloaded{1}
+\def\paperversion{2}
+\def\releaseedition{full}
+\def\releasechanges{0}
+\input{paper_helper}
+\input{release_helper}
+\input{catalog/catalog_macros}
+% The catalogs print all text in black (revision-highlight colours disabled).
+\ownerfixhighlightfalse
+\definecolor{OwnerFixRed}{RGB}{0,0,0}\definecolor{CoauthorMagenta}{RGB}{0,0,0}\definecolor{NewFixBlue}{RGB}{0,0,0}
+\ifdefined\orderfixredfalse\orderfixredfalse\fi
+% References to the paper resolve to the numbers of its arXiv version (prefix A), as in the report style; the
+% Section VI table of the extended version (tab:empirical-performance) is Table I of the arXiv version.
+\makeatletter
+\AtBeginDocument{\InputIfFileExists{report/generated/paper_references.tex}{}{}%
+  \@ifundefined{r@tab:empirical-performance}{\expandafter\let\csname r@tab:empirical-performance\expandafter\endcsname
+    \csname r@tab:empirical-topfive\endcsname}{}}
+\makeatother
+% run-in subsubsection headings of ieeeconf get a line of their own before a full-width display
+\newcommand{\catsubsub}[1]{\subsubsection{#1}\mbox{}\par}
+\AtBeginDocument{\onecolumn\pagestyle{plain}\raggedbottom}

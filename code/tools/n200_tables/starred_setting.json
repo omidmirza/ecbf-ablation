@@ -1,0 +1,110 @@
+{
+ "purpose": "Starred row S* of the full edition's Section VI Table I (fragment sec6_combined): V-C at the setting reported in Section VI of the submitted version. Not on the N200 main grid; values copied from the N_MC = 200 table below (same simulator, initial states and disturbance realizations). Event cells print one count (confirmed and possible together = upper end of the printed range) and the printed bound, except cells with count_rule 'confirmed' (qcert: the submission's value 3 (4.6)), which print the lower end with the printed bound.",
+ "scenario": "maze",
+ "label": "S$^\\ast$",
+ "method": "V-C",
+ "configuration": {
+  "alpha0": 0.25,
+  "alpha": 0.225,
+  "delta": 0.15,
+  "K": 50,
+  "budget_normalizer": 2.11,
+  "bound_scale": 1.0,
+  "L_mu": 0.0005
+ },
+ "source_file": "appendices/sim_tables/metrics_selected_maze_consolidated.tex",
+ "source_setting_line": 3,
+ "cells": [
+  {
+   "spec": "m_c#3",
+   "kind": "meanSD",
+   "mean": "0.610",
+   "sd": "0.056",
+   "line": 16,
+   "column": 2,
+   "source_text": "$\\reviewedit{\\mathbf{0.610}}\\pm 0.056$"
+  },
+  {
+   "spec": "q_use#2",
+   "kind": "meanSD",
+   "mean": "89.75",
+   "sd": "1.70",
+   "line": 16,
+   "column": 3,
+   "source_text": "$\\reviewedit{\\mathbf{89.75}}\\pm 1.70$"
+  },
+  {
+   "spec": "q_CBF",
+   "kind": "meanSD",
+   "mean": "5.17",
+   "sd": "1.66",
+   "line": 30,
+   "column": 2,
+   "source_text": "$5.17\\pm 1.66$"
+  },
+  {
+   "spec": "q_unsafe",
+   "kind": "meanSD",
+   "mean": "{<}0.01",
+   "sd": "0.04",
+   "line": 30,
+   "column": 3,
+   "source_text": "${<}0.01\\pm 0.04$"
+  },
+  {
+   "spec": "pk",
+   "kind": "meanSD",
+   "mean": "0.158",
+   "sd": "0.038",
+   "line": 16,
+   "column": 4,
+   "source_text": "$0.158\\pm 0.038$"
+  },
+  {
+   "spec": "qdep",
+   "kind": "event",
+   "count": 1,
+   "upper_pct": "2.4",
+   "line": 44,
+   "column": 1,
+   "source_text": "1/200 (2.4\\%)"
+  },
+  {
+   "spec": "qcert",
+   "kind": "event",
+   "count": 3,
+   "upper_pct": "4.6",
+   "line": 44,
+   "column": 3,
+   "source_text": "3--4/200 (4.6\\%)",
+   "count_rule": "confirmed",
+   "note": "printed as in the submission; source cell \"3--4/200 (4.6%)\" (3 confirmed, 4 incl. one possible event); the printed bound 4.6 is that of the source cell (4/200)"
+  },
+  {
+   "spec": "T_mis",
+   "kind": "meanSD",
+   "mean": "51.76",
+   "sd": "0.43",
+   "line": 16,
+   "column": 1,
+   "source_text": "$\\reviewedit{\\mathbf{51.76}}\\pm 0.43$"
+  }
+ ],
+ "text_reference": {
+  "cmax_T_mis": {
+   "mean": "54.44",
+   "line": 9,
+   "column": 1
+  },
+  "goals": {
+   "value": "200/200",
+   "line": 44,
+   "column": 4
+  },
+  "contact": {
+   "value": "0/200",
+   "line": 30,
+   "column": 4
+  }
+ }
+}

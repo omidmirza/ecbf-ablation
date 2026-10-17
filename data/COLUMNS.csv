@@ -1,0 +1,928 @@
+file,column,description
+tables/tables_values_flat.csv,target,fragment set: paper (arXiv paper and other paper-style fragments) or report (ablation report)
+tables/tables_values_flat.csv,fragment,"table fragment (file name generated_n200/{paper,report}/<fragment>.tex in the paper source tree)"
+tables/tables_values_flat.csv,table,table environment id inside the fragment
+tables/tables_values_flat.csv,method,variant / baseline of the row (internal key)
+tables/tables_values_flat.csv,spec,metric or quantity printed
+tables/tables_values_flat.csv,printed,text exactly as printed in the cell (LaTeX)
+tables/tables_values_flat.csv,kind,"cell kind (meanSD, tmeanSD, meanSD_plain, mean_plain, event, event_pct, event_pct_sweep, event_count_compact, count, NA, NA_dash, design_values, a6_total, starred, starred_variant, starred_compact, starred_missing)"
+tables/tables_values_flat.csv,fixed,design_overview rows: fixed parameters printed in the row (LaTeX)
+tables/tables_values_flat.csv,sets,"design_overview rows: JSON of the compared values (alpha per alpha0, delta, K, b, phi, L_mu, methods)"
+tables/tables_values_flat.csv,row,JSON of the row key
+tables/tables_values_flat.csv,row_label,row key as text
+tables/tables_values_flat.csv,src,"export the cell comes from: final, new (new_anchors), final_temporal, or the starred-row sources (starred_variant, starred_setting.json)"
+tables/tables_values_flat.csv,view_id,N200 view id
+tables/tables_values_flat.csv,n100_view_id,view id of the same cell in the earlier N100 export
+tables/tables_values_flat.csv,family,view family
+tables/tables_values_flat.csv,configuration_id,configuration id
+tables/tables_values_flat.csv,configuration,JSON configuration
+tables/tables_values_flat.csv,source,"key of the value in the export record (for example statistics.m_c, trajectory_events.qdep)"
+tables/tables_values_flat.csv,scale,display scale (value x scale printed)
+tables/tables_values_flat.csv,decimals,printed decimals
+tables/tables_values_flat.csv,mean_str,printed mean
+tables/tables_values_flat.csv,sd_str,printed SD
+tables/tables_values_flat.csv,conditional,conditional mean
+tables/tables_values_flat.csv,boldable,may be bold
+tables/tables_values_flat.csv,arrow,preferred direction
+tables/tables_values_flat.csv,bold,printed bold
+tables/tables_values_flat.csv,assessed,trajectories assessed
+tables/tables_values_flat.csv,count,event count printed
+tables/tables_values_flat.csv,n,denominator
+tables/tables_values_flat.csv,upper95,upper bound used (fraction)
+tables/tables_values_flat.csv,upper_str,"printed bound (%, rounded up)"
+tables/tables_values_flat.csv,check,check mark printed
+tables/tables_values_flat.csv,certified,certified variant
+tables/tables_values_flat.csv,level,guarantee level used for the check
+tables/tables_values_flat.csv,counts,"event counts (confirmed, possible)"
+tables/tables_values_flat.csv,count_rule,"printed count when confirmed and possible counts differ: range (both), confirmed (lower end) or upper (upper end)"
+tables/tables_values_flat.csv,confirmed,confirmed event count (cells with count_rule)
+tables/tables_values_flat.csv,pct_str,printed event frequency (%)
+tables/tables_values_flat.csv,stat_keys,"JSON: statistics fields read from the export (mean and sd, or available_mean and available_sd)"
+tables/tables_values_flat.csv,source_file,"source table file of the cell in the paper source tree, not included (starred row S*)"
+tables/tables_values_flat.csv,source_line,line in the source table file (starred row S*)
+tables/tables_values_flat.csv,json_spec,spec key in tables/starred_setting.json (starred row S*)
+tables/tables_values_flat.csv,count_str,printed count
+tables/tables_values_flat.csv,compact_mean,mean printed in the compact form (starred row S*)
+tables/tables_values_flat.csv,source_text,text of the cell in the source table (starred row S*)
+tables/tables_values_flat.csv,factor,factor applied to the source value (starred row S*)
+tables/tables_values_flat.csv,source_column,column in the source table file (starred row S*)
+tables/tables_values_flat.csv,sort_key,value used to choose the bold entry (starred row S*)
+tables/tables_values_flat.csv,digits,rounded (re-rounded to the printed decimals) or source (digits of the source table) (starred row S*)
+tables/tables_values_flat.csv,na,cell printed as not applicable (N-A)
+tables/tables_values_flat.csv,name,assumption_checks_arxiv: LaTeX macro of the printed number
+tables/tables_values_flat.csv,field,assumption_checks_arxiv: quantity counted
+tables/tables_values_flat.csv,value,assumption_checks_arxiv: value of the number
+tables/tables_values_flat.csv,scope,assumption_checks_arxiv: configurations and views counted
+per_trajectory/per_trajectory_values.csv,setting,Default or T1..T5 (= S1..S5 in the paper and the report)
+per_trajectory/per_trajectory_values.csv,asset_label,"file label Default, New1..New5"
+per_trajectory/per_trajectory_values.csv,scenario,corridor or maze
+per_trajectory/per_trajectory_values.csv,method,method name printed
+per_trajectory/per_trajectory_values.csv,method_key,internal key
+per_trajectory/per_trajectory_values.csv,is_baseline,"baseline (c=0, c_max, ACI, QT, Unfiltered) at the setting's alpha0"
+per_trajectory/per_trajectory_values.csv,setting_alpha0,alpha0 of the setting
+per_trajectory/per_trajectory_values.csv,setting_alpha,alpha of the setting
+per_trajectory/per_trajectory_values.csv,setting_delta,delta of the setting
+per_trajectory/per_trajectory_values.csv,setting_K,K of the setting
+per_trajectory/per_trajectory_values.csv,setting_paired_variant,paired variant of the setting
+per_trajectory/per_trajectory_values.csv,L_mu,L_mu (0.0005)
+per_trajectory/per_trajectory_values.csv,seed,trajectory seed 970001..970200
+per_trajectory/per_trajectory_values.csv,T_mis,"mission time T_mis,k (s)"
+per_trajectory/per_trajectory_values.csv,m_c,"m_c,k / c_max"
+per_trajectory/per_trajectory_values.csv,m_Y,"m_Y,k / c_max"
+per_trajectory/per_trajectory_values.csv,q_CBF,"q+_CBF,k fraction of executed decisions"
+per_trajectory/per_trajectory_values.csv,q_unsafe,"q+_unsafe,k fraction"
+per_trajectory/per_trajectory_values.csv,q_use,"q+_use,k fraction"
+per_trajectory/per_trajectory_values.csv,q_nocert,"q+_nocert,k fraction"
+per_trajectory/per_trajectory_values.csv,q_notrans,"q+_dep,k fraction (certified but not deployable)"
+per_trajectory/per_trajectory_values.csv,p_max,estimated peak exceedance risk p-hat_k^max (empty = N-A)
+per_trajectory/per_trajectory_values.csv,h_min,min_t h (m)
+per_trajectory/per_trajectory_values.csv,tau_use,time of first smaller-margin use (s; empty if none)
+per_trajectory/per_trajectory_values.csv,N,executed decisions
+per_trajectory/per_trajectory_values.csv,q_CBF_pct,"q+_CBF,k in % (as plotted)"
+per_trajectory/per_trajectory_values.csv,q_unsafe_pct,"q+_unsafe,k in % (as plotted)"
+per_trajectory/boxplot_statistics.csv,setting,Default or T1..T5 (= S1..S5)
+per_trajectory/boxplot_statistics.csv,asset_label,file label
+per_trajectory/boxplot_statistics.csv,scenario,scenario
+per_trajectory/boxplot_statistics.csv,method,method
+per_trajectory/boxplot_statistics.csv,metric,"T_mis, m_c, q_CBF (%), q_unsafe (%), p_max, h_min"
+per_trajectory/boxplot_statistics.csv,plot_unit,percent for q rows
+per_trajectory/boxplot_statistics.csv,n,values
+per_trajectory/boxplot_statistics.csv,mean,mean (plot units)
+per_trajectory/boxplot_statistics.csv,sd,sample SD
+per_trajectory/boxplot_statistics.csv,min,minimum
+per_trajectory/boxplot_statistics.csv,q1,first quartile (linear interpolation)
+per_trajectory/boxplot_statistics.csv,median,median
+per_trajectory/boxplot_statistics.csv,q3,third quartile
+per_trajectory/boxplot_statistics.csv,max,maximum
+per_trajectory/boxplot_statistics.csv,whisker_low,lowest value >= q1 - 1.5 IQR
+per_trajectory/boxplot_statistics.csv,whisker_high,highest value <= q3 + 1.5 IQR
+sweeps/sweep_series.csv,setting,Default or T1..T5 (= S1..S5)
+sweeps/sweep_series.csv,asset_label,file label
+sweeps/sweep_series.csv,alpha0,setting alpha0
+sweeps/sweep_series.csv,alpha,setting alpha
+sweeps/sweep_series.csv,delta,setting delta
+sweeps/sweep_series.csv,K,setting K
+sweeps/sweep_series.csv,paired_variant,paired variant of the setting
+sweeps/sweep_series.csv,scenario,scenario
+sweeps/sweep_series.csv,swept_parameter,"alpha, delta, K, b, phi, or baseline (horizontal reference lines)"
+sweeps/sweep_series.csv,x_value,"value of the swept parameter (K as 10, 50, 100, 200, infinity)"
+sweeps/sweep_series.csv,x_position,plotted x position (K: index 0..4)
+sweeps/sweep_series.csv,variant,variant or baseline name printed
+sweeps/sweep_series.csv,method_key,internal key
+sweeps/sweep_series.csv,L_mu,"L_mu of the cell (phi column: 0.0005 solid, 0.005 dashed)"
+sweeps/sweep_series.csv,is_setting_value,x equals the setting's own value (vertical dotted line)
+sweeps/sweep_series.csv,source,final or new_anchors
+sweeps/sweep_series.csv,view_id,N200 view id
+sweeps/sweep_series.csv,metric,"m_c, q_CBF, q_unsafe, q_use, T_mis, p_max, h_min, q_cert, q_dep"
+sweeps/sweep_series.csv,kind,statistic (mean +- SD) or event_count (trajectory count)
+sweeps/sweep_series.csv,mean,"sample mean (raw units, fractions)"
+sweeps/sweep_series.csv,sd,sample SD
+sweeps/sweep_series.csv,count,q_cert / q_dep: possible (confirmed + undecided) count of 200
+sweeps/sweep_series.csv,count_confirmed,confirmed count
+sweeps/sweep_series.csv,upper95,q_cert / q_dep: one-sided 95% upper bound of the possible count (fraction)
+sweeps/sweep_series.csv,n_assessed,trajectories assessed
+sweeps/sweep_series.csv,n_total,trajectories (200)
+sweeps/sweep_series.csv,applicable,metric defined
+sweeps/sweep_series.csv,plot_value,value as plotted (q_CBF and q_unsafe in %)
+sweeps/sweep_series.csv,plot_unit,unit of plot_value
+sweeps/sweepbox_T3_values.csv,setting,T3 (= S3)
+sweeps/sweepbox_T3_values.csv,asset_label,file label New3
+sweeps/sweepbox_T3_values.csv,alpha0,setting alpha0
+sweeps/sweepbox_T3_values.csv,alpha,setting alpha
+sweeps/sweepbox_T3_values.csv,delta,setting delta
+sweeps/sweepbox_T3_values.csv,K,setting K
+sweeps/sweepbox_T3_values.csv,scenario,corridor or maze
+sweeps/sweepbox_T3_values.csv,swept_parameter,"alpha, delta, K or b"
+sweeps/sweepbox_T3_values.csv,x_value,"value of the swept parameter (K as 10, 50, 100, 200, infinity)"
+sweeps/sweepbox_T3_values.csv,x_position,plotted x position
+sweeps/sweepbox_T3_values.csv,is_setting_value,x equals the setting's own value (grey column band)
+sweeps/sweepbox_T3_values.csv,variant,V-L or V-C
+sweeps/sweepbox_T3_values.csv,method_key,internal key (V-Cd = V-L)
+sweeps/sweepbox_T3_values.csv,source,final or new_anchors
+sweeps/sweepbox_T3_values.csv,family,view family of the cell
+sweeps/sweepbox_T3_values.csv,view_id,N200 view id
+sweeps/sweepbox_T3_values.csv,configuration_id,SHA-256 id of the configuration
+sweeps/sweepbox_T3_values.csv,seed,trajectory seed 970001..970200
+sweeps/sweepbox_T3_values.csv,index_source,run source of the trajectory in the trajectory index
+sweeps/sweepbox_T3_values.csv,assessment_sha256,SHA-256 of the saved per-trajectory assessment
+sweeps/sweepbox_T3_values.csv,m_c_over_cmax,"m_c,k / c_max"
+sweeps/sweepbox_T3_values.csv,q_CBF_fraction,"q+_CBF,k (fraction)"
+sweeps/sweepbox_T3_values.csv,q_CBF_percent,"q+_CBF,k (%, as plotted)"
+sweeps/sweepbox_T3_values.csv,T_mis_s,"T_mis,k (s)"
+sweeps/sweepbox_T3_values.csv,qdep_applicable,q_dep event defined for this trajectory
+sweeps/sweepbox_T3_values.csv,qdep_confirmed,confirmed q_dep event
+sweeps/sweepbox_T3_values.csv,qdep_possible,confirmed or numerically undecided q_dep event
+sweeps/sweepbox_T3_values.csv,cell_mean_m_c,"cell mean of m_c,k / c_max (equals metrics.json)"
+sweeps/sweepbox_T3_values.csv,cell_mean_q_CBF_fraction,"cell mean of q+_CBF,k (equals metrics.json)"
+sweeps/sweepbox_T3_values.csv,cell_mean_T_mis_s,"cell mean of T_mis,k (equals metrics.json)"
+sweeps/sweepbox_T3_values.csv,cell_qdep_possible_count,possible q_dep count of the cell
+sweeps/sweepbox_T3_values.csv,cell_qdep_confirmed_count,confirmed q_dep count of the cell
+sweeps/sweepbox_T3_values.csv,cell_qdep_upper95,one-sided 95% Clopper-Pearson upper bound of the possible count (fraction)
+sweeps/sweepbox_ext_values.csv.gz,configuration_id,SHA-256 id of the configuration
+sweeps/sweepbox_ext_values.csv.gz,alpha0,alpha0
+sweeps/sweepbox_ext_values.csv.gz,alpha,alpha
+sweeps/sweepbox_ext_values.csv.gz,delta,delta
+sweeps/sweepbox_ext_values.csv.gz,K,K (infinity = never re-test)
+sweeps/sweepbox_ext_values.csv.gz,budget_normalizer,b (budget normalizer)
+sweeps/sweepbox_ext_values.csv.gz,bound_scale,phi (bound factor)
+sweeps/sweepbox_ext_values.csv.gz,L_mu,L_mu (drift constant)
+sweeps/sweepbox_ext_values.csv.gz,benchmark,scenario: corridor or maze
+sweeps/sweepbox_ext_values.csv.gz,method,"internal method key (V-U, V-D = V-Delta, V-Cd = V-L, V-C)"
+sweeps/sweepbox_ext_values.csv.gz,seed,trajectory seed 970001..970200
+sweeps/sweepbox_ext_values.csv.gz,index_source,run source of the trajectory in the trajectory index
+sweeps/sweepbox_ext_values.csv.gz,assessment_sha256,SHA-256 of the saved per-trajectory assessment
+sweeps/sweepbox_ext_values.csv.gz,m_c_over_cmax,"m_c,k / c_max"
+sweeps/sweepbox_ext_values.csv.gz,q_CBF_fraction,"q+_CBF,k (fraction)"
+sweeps/sweepbox_ext_values.csv.gz,q_unsafe_fraction,"q+_unsafe,k (fraction)"
+sweeps/sweepbox_ext_values.csv.gz,T_mis_s,"T_mis,k (s)"
+sweeps/sweepbox_ext_values.csv.gz,qcert_applicable,q_cert event defined for this trajectory
+sweeps/sweepbox_ext_values.csv.gz,qcert_confirmed,confirmed false certification
+sweeps/sweepbox_ext_values.csv.gz,qcert_possible,confirmed or numerically undecided false certification
+sweeps/sweepbox_ext_values.csv.gz,qdep_applicable,q_dep event defined for this trajectory
+sweeps/sweepbox_ext_values.csv.gz,qdep_confirmed,confirmed q_dep event
+sweeps/sweepbox_ext_values.csv.gz,qdep_possible,confirmed or numerically undecided q_dep event
+heatmaps/heatmap_grid.csv,scenario,scenario
+heatmaps/heatmap_grid.csv,metric,metric key (see summary dictionary)
+heatmaps/heatmap_grid.csv,alpha0,alpha0
+heatmaps/heatmap_grid.csv,alpha,alpha
+heatmaps/heatmap_grid.csv,delta,delta
+heatmaps/heatmap_grid.csv,K,K
+heatmaps/heatmap_grid.csv,variant,variant printed
+heatmaps/heatmap_grid.csv,method_key,internal key
+heatmaps/heatmap_grid.csv,mean,sample mean (raw units; heatmaps print mean x display scale)
+heatmaps/heatmap_grid.csv,sd,sample SD
+heatmaps/heatmap_grid.csv,n_assessed,trajectories with a value
+heatmaps/heatmap_grid.csv,n_total,trajectories (200)
+heatmaps/heatmap_grid.csv,applicable,metric defined
+heatmaps/heatmap_grid.csv,conditional,conditional mean
+heatmaps/heatmap_grid.csv,view_id,N200 view id
+summary/common_metrics_final.csv,source,export folder: final (N200_numbers/final) or new_anchors
+summary/common_metrics_final.csv,view_id,N200 view id (SHA-256) of the declared metric view in metrics.json
+summary/common_metrics_final.csv,family,"view family: main_grid_200, stress_drift_200 (phi x L_mu), budget_normalizer_200 (b), detailed_200, matched_baselines_200, matched_ACI_200"
+summary/common_metrics_final.csv,view_label,label of the view
+summary/common_metrics_final.csv,anchor,new-anchor role (new_top5_role1..5 = T1..T5); empty in final
+summary/common_metrics_final.csv,anchor_id,anchor id
+summary/common_metrics_final.csv,role,development
+summary/common_metrics_final.csv,anchor_alpha0,alpha0 of the anchor setting (new_anchors)
+summary/common_metrics_final.csv,anchor_alpha,alpha of the anchor setting
+summary/common_metrics_final.csv,anchor_delta,delta of the anchor setting
+summary/common_metrics_final.csv,anchor_K,K of the anchor setting
+summary/common_metrics_final.csv,n100_view_id,view id of the same cell in the sealed N100 export
+summary/common_metrics_final.csv,seed_first,first seed (970001)
+summary/common_metrics_final.csv,seed_last,last seed (970200)
+summary/common_metrics_final.csv,n_seeds,number of seeds = trajectories (200)
+summary/common_metrics_final.csv,scenario,corridor or maze
+summary/common_metrics_final.csv,method,"internal method key (Zero margin=c=0, Conservative=c_max, ACI, QT, Unfiltered, V-U, V-D=V-Delta, V-Cd=V-L, V-C)"
+summary/common_metrics_final.csv,method_display,name printed in the documents
+summary/common_metrics_final.csv,alpha0,alpha_0 (risk level of the baselines / nominal)
+summary/common_metrics_final.csv,alpha,alpha (variant risk parameter)
+summary/common_metrics_final.csv,delta,delta (certification level)
+summary/common_metrics_final.csv,K,K (test period in decisions; infinity = never re-test)
+summary/common_metrics_final.csv,L_mu,L_mu (drift constant)
+summary/common_metrics_final.csv,phi_bound_scale,"phi (bound factor, configuration key bound_scale)"
+summary/common_metrics_final.csv,b_budget_normalizer,"b (budget normalizer, key budget_normalizer; 2.11 default)"
+summary/common_metrics_final.csv,rho_buf,rho_buf (0)
+summary/common_metrics_final.csv,configuration_id,SHA-256 id of the configuration
+summary/common_metrics_final.csv,population_sha256,SHA-256 of the assessed seed population
+summary/common_metrics_final.csv,n,trajectories in the cell (200)
+summary/common_metrics_final.csv,statistics.T_mis.total_n,mission time (s): trajectories
+summary/common_metrics_final.csv,statistics.T_mis.observed_n,mission time (s): trajectories with a value
+summary/common_metrics_final.csv,statistics.T_mis.missing_n,mission time (s): trajectories without a value
+summary/common_metrics_final.csv,statistics.T_mis.missing_reasons,mission time (s): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.T_mis.applicable,mission time (s): metric defined for this method
+summary/common_metrics_final.csv,statistics.T_mis.conditional,mission time (s): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.T_mis.mean,mission time (s): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.T_mis.sd,mission time (s): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.T_mis.available_mean,mission time (s): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.T_mis.available_sd,mission time (s): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.T_mis.comparison_eligible,mission time (s): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.m_c.total_n,mean robustness margin / c_max: trajectories
+summary/common_metrics_final.csv,statistics.m_c.observed_n,mean robustness margin / c_max: trajectories with a value
+summary/common_metrics_final.csv,statistics.m_c.missing_n,mean robustness margin / c_max: trajectories without a value
+summary/common_metrics_final.csv,statistics.m_c.missing_reasons,mean robustness margin / c_max: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.m_c.applicable,mean robustness margin / c_max: metric defined for this method
+summary/common_metrics_final.csv,statistics.m_c.conditional,mean robustness margin / c_max: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.m_c.mean,mean robustness margin / c_max: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.m_c.sd,mean robustness margin / c_max: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.m_c.available_mean,mean robustness margin / c_max: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.m_c.available_sd,mean robustness margin / c_max: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.m_c.comparison_eligible,mean robustness margin / c_max: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.m_Y.total_n,mean barrier loss / c_max: trajectories
+summary/common_metrics_final.csv,statistics.m_Y.observed_n,mean barrier loss / c_max: trajectories with a value
+summary/common_metrics_final.csv,statistics.m_Y.missing_n,mean barrier loss / c_max: trajectories without a value
+summary/common_metrics_final.csv,statistics.m_Y.missing_reasons,mean barrier loss / c_max: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.m_Y.applicable,mean barrier loss / c_max: metric defined for this method
+summary/common_metrics_final.csv,statistics.m_Y.conditional,mean barrier loss / c_max: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.m_Y.mean,mean barrier loss / c_max: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.m_Y.sd,mean barrier loss / c_max: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.m_Y.available_mean,mean barrier loss / c_max: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.m_Y.available_sd,mean barrier loss / c_max: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.m_Y.comparison_eligible,mean barrier loss / c_max: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.m_int.total_n,control intervention (stored input coordinates squared): trajectories
+summary/common_metrics_final.csv,statistics.m_int.observed_n,control intervention (stored input coordinates squared): trajectories with a value
+summary/common_metrics_final.csv,statistics.m_int.missing_n,control intervention (stored input coordinates squared): trajectories without a value
+summary/common_metrics_final.csv,statistics.m_int.missing_reasons,control intervention (stored input coordinates squared): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.m_int.applicable,control intervention (stored input coordinates squared): metric defined for this method
+summary/common_metrics_final.csv,statistics.m_int.conditional,control intervention (stored input coordinates squared): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.m_int.mean,control intervention (stored input coordinates squared): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.m_int.sd,control intervention (stored input coordinates squared): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.m_int.available_mean,control intervention (stored input coordinates squared): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.m_int.available_sd,control intervention (stored input coordinates squared): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.m_int.comparison_eligible,control intervention (stored input coordinates squared): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_CBF.total_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories
+summary/common_metrics_final.csv,statistics.q_CBF.observed_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories with a value
+summary/common_metrics_final.csv,statistics.q_CBF.missing_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories without a value
+summary/common_metrics_final.csv,statistics.q_CBF.missing_reasons,fraction of executed decisions with a CBF violation (print x100 for %): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_CBF.applicable,fraction of executed decisions with a CBF violation (print x100 for %): metric defined for this method
+summary/common_metrics_final.csv,statistics.q_CBF.conditional,fraction of executed decisions with a CBF violation (print x100 for %): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_CBF.mean,fraction of executed decisions with a CBF violation (print x100 for %): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_CBF.sd,fraction of executed decisions with a CBF violation (print x100 for %): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_CBF.available_mean,fraction of executed decisions with a CBF violation (print x100 for %): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_CBF.available_sd,fraction of executed decisions with a CBF violation (print x100 for %): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_CBF.comparison_eligible,fraction of executed decisions with a CBF violation (print x100 for %): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_Y.total_n,fraction of barrier-loss exceedance: trajectories
+summary/common_metrics_final.csv,statistics.q_Y.observed_n,fraction of barrier-loss exceedance: trajectories with a value
+summary/common_metrics_final.csv,statistics.q_Y.missing_n,fraction of barrier-loss exceedance: trajectories without a value
+summary/common_metrics_final.csv,statistics.q_Y.missing_reasons,fraction of barrier-loss exceedance: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_Y.applicable,fraction of barrier-loss exceedance: metric defined for this method
+summary/common_metrics_final.csv,statistics.q_Y.conditional,fraction of barrier-loss exceedance: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_Y.mean,fraction of barrier-loss exceedance: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_Y.sd,fraction of barrier-loss exceedance: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_Y.available_mean,fraction of barrier-loss exceedance: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_Y.available_sd,fraction of barrier-loss exceedance: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_Y.comparison_eligible,fraction of barrier-loss exceedance: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_use.total_n,fraction of decisions using a smaller margin: trajectories
+summary/common_metrics_final.csv,statistics.q_use.observed_n,fraction of decisions using a smaller margin: trajectories with a value
+summary/common_metrics_final.csv,statistics.q_use.missing_n,fraction of decisions using a smaller margin: trajectories without a value
+summary/common_metrics_final.csv,statistics.q_use.missing_reasons,fraction of decisions using a smaller margin: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_use.applicable,fraction of decisions using a smaller margin: metric defined for this method
+summary/common_metrics_final.csv,statistics.q_use.conditional,fraction of decisions using a smaller margin: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_use.mean,fraction of decisions using a smaller margin: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_use.sd,fraction of decisions using a smaller margin: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_use.available_mean,fraction of decisions using a smaller margin: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_use.available_sd,fraction of decisions using a smaller margin: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_use.comparison_eligible,fraction of decisions using a smaller margin: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_unsafe.total_n,fraction with a safe-set violation (print x100 for %): trajectories
+summary/common_metrics_final.csv,statistics.q_unsafe.observed_n,fraction with a safe-set violation (print x100 for %): trajectories with a value
+summary/common_metrics_final.csv,statistics.q_unsafe.missing_n,fraction with a safe-set violation (print x100 for %): trajectories without a value
+summary/common_metrics_final.csv,statistics.q_unsafe.missing_reasons,fraction with a safe-set violation (print x100 for %): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_unsafe.applicable,fraction with a safe-set violation (print x100 for %): metric defined for this method
+summary/common_metrics_final.csv,statistics.q_unsafe.conditional,fraction with a safe-set violation (print x100 for %): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_unsafe.mean,fraction with a safe-set violation (print x100 for %): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_unsafe.sd,fraction with a safe-set violation (print x100 for %): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_unsafe.available_mean,fraction with a safe-set violation (print x100 for %): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_unsafe.available_sd,fraction with a safe-set violation (print x100 for %): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_unsafe.comparison_eligible,fraction with a safe-set violation (print x100 for %): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_nocert.total_n,fraction of decisions with no certificate: trajectories
+summary/common_metrics_final.csv,statistics.q_nocert.observed_n,fraction of decisions with no certificate: trajectories with a value
+summary/common_metrics_final.csv,statistics.q_nocert.missing_n,fraction of decisions with no certificate: trajectories without a value
+summary/common_metrics_final.csv,statistics.q_nocert.missing_reasons,fraction of decisions with no certificate: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_nocert.applicable,fraction of decisions with no certificate: metric defined for this method
+summary/common_metrics_final.csv,statistics.q_nocert.conditional,fraction of decisions with no certificate: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_nocert.mean,fraction of decisions with no certificate: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_nocert.sd,fraction of decisions with no certificate: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_nocert.available_mean,fraction of decisions with no certificate: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_nocert.available_sd,fraction of decisions with no certificate: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_nocert.comparison_eligible,fraction of decisions with no certificate: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.q_notrans.total_n,fraction certified but not deployable (q_dep): trajectories
+summary/common_metrics_final.csv,statistics.q_notrans.observed_n,fraction certified but not deployable (q_dep): trajectories with a value
+summary/common_metrics_final.csv,statistics.q_notrans.missing_n,fraction certified but not deployable (q_dep): trajectories without a value
+summary/common_metrics_final.csv,statistics.q_notrans.missing_reasons,fraction certified but not deployable (q_dep): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.q_notrans.applicable,fraction certified but not deployable (q_dep): metric defined for this method
+summary/common_metrics_final.csv,statistics.q_notrans.conditional,fraction certified but not deployable (q_dep): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.q_notrans.mean,fraction certified but not deployable (q_dep): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.q_notrans.sd,fraction certified but not deployable (q_dep): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.q_notrans.available_mean,fraction certified but not deployable (q_dep): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.q_notrans.available_sd,fraction certified but not deployable (q_dep): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.q_notrans.comparison_eligible,fraction certified but not deployable (q_dep): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.tau_use.total_n,mean time of first smaller-margin use (s): trajectories
+summary/common_metrics_final.csv,statistics.tau_use.observed_n,mean time of first smaller-margin use (s): trajectories with a value
+summary/common_metrics_final.csv,statistics.tau_use.missing_n,mean time of first smaller-margin use (s): trajectories without a value
+summary/common_metrics_final.csv,statistics.tau_use.missing_reasons,mean time of first smaller-margin use (s): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.tau_use.applicable,mean time of first smaller-margin use (s): metric defined for this method
+summary/common_metrics_final.csv,statistics.tau_use.conditional,mean time of first smaller-margin use (s): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.tau_use.mean,mean time of first smaller-margin use (s): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.tau_use.sd,mean time of first smaller-margin use (s): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.tau_use.available_mean,mean time of first smaller-margin use (s): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.tau_use.available_sd,mean time of first smaller-margin use (s): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.tau_use.comparison_eligible,mean time of first smaller-margin use (s): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.p_max.total_n,mean of the per-trajectory peak estimated exceedance risk: trajectories
+summary/common_metrics_final.csv,statistics.p_max.observed_n,mean of the per-trajectory peak estimated exceedance risk: trajectories with a value
+summary/common_metrics_final.csv,statistics.p_max.missing_n,mean of the per-trajectory peak estimated exceedance risk: trajectories without a value
+summary/common_metrics_final.csv,statistics.p_max.missing_reasons,mean of the per-trajectory peak estimated exceedance risk: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.p_max.applicable,mean of the per-trajectory peak estimated exceedance risk: metric defined for this method
+summary/common_metrics_final.csv,statistics.p_max.conditional,mean of the per-trajectory peak estimated exceedance risk: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.p_max.mean,mean of the per-trajectory peak estimated exceedance risk: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.p_max.sd,mean of the per-trajectory peak estimated exceedance risk: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.p_max.available_mean,mean of the per-trajectory peak estimated exceedance risk: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.p_max.available_sd,mean of the per-trajectory peak estimated exceedance risk: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.p_max.comparison_eligible,mean of the per-trajectory peak estimated exceedance risk: usable in paired comparisons
+summary/common_metrics_final.csv,statistics.runtime_ms.total_n,controller wall time per decision (ms; descriptive): trajectories
+summary/common_metrics_final.csv,statistics.runtime_ms.observed_n,controller wall time per decision (ms; descriptive): trajectories with a value
+summary/common_metrics_final.csv,statistics.runtime_ms.missing_n,controller wall time per decision (ms; descriptive): trajectories without a value
+summary/common_metrics_final.csv,statistics.runtime_ms.missing_reasons,controller wall time per decision (ms; descriptive): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.runtime_ms.applicable,controller wall time per decision (ms; descriptive): metric defined for this method
+summary/common_metrics_final.csv,statistics.runtime_ms.conditional,controller wall time per decision (ms; descriptive): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.runtime_ms.mean,controller wall time per decision (ms; descriptive): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.runtime_ms.sd,controller wall time per decision (ms; descriptive): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.runtime_ms.available_mean,controller wall time per decision (ms; descriptive): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.runtime_ms.available_sd,controller wall time per decision (ms; descriptive): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.runtime_ms.comparison_eligible,controller wall time per decision (ms; descriptive): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.h_min.total_n,mean minimum barrier value (m): trajectories
+summary/common_metrics_final.csv,statistics.h_min.observed_n,mean minimum barrier value (m): trajectories with a value
+summary/common_metrics_final.csv,statistics.h_min.missing_n,mean minimum barrier value (m): trajectories without a value
+summary/common_metrics_final.csv,statistics.h_min.missing_reasons,mean minimum barrier value (m): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.h_min.applicable,mean minimum barrier value (m): metric defined for this method
+summary/common_metrics_final.csv,statistics.h_min.conditional,mean minimum barrier value (m): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.h_min.mean,mean minimum barrier value (m): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.h_min.sd,mean minimum barrier value (m): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.h_min.available_mean,mean minimum barrier value (m): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.h_min.available_sd,mean minimum barrier value (m): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.h_min.comparison_eligible,mean minimum barrier value (m): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.clearance_min.total_n,mean minimum clearance (m): trajectories
+summary/common_metrics_final.csv,statistics.clearance_min.observed_n,mean minimum clearance (m): trajectories with a value
+summary/common_metrics_final.csv,statistics.clearance_min.missing_n,mean minimum clearance (m): trajectories without a value
+summary/common_metrics_final.csv,statistics.clearance_min.missing_reasons,mean minimum clearance (m): JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.clearance_min.applicable,mean minimum clearance (m): metric defined for this method
+summary/common_metrics_final.csv,statistics.clearance_min.conditional,mean minimum clearance (m): mean is conditional on availability
+summary/common_metrics_final.csv,statistics.clearance_min.mean,mean minimum clearance (m): sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.clearance_min.sd,mean minimum clearance (m): sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.clearance_min.available_mean,mean minimum clearance (m): same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.clearance_min.available_sd,mean minimum clearance (m): same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.clearance_min.comparison_eligible,mean minimum clearance (m): usable in paired comparisons
+summary/common_metrics_final.csv,statistics.n_certificates.total_n,mean number of certificates: trajectories
+summary/common_metrics_final.csv,statistics.n_certificates.observed_n,mean number of certificates: trajectories with a value
+summary/common_metrics_final.csv,statistics.n_certificates.missing_n,mean number of certificates: trajectories without a value
+summary/common_metrics_final.csv,statistics.n_certificates.missing_reasons,mean number of certificates: JSON counts of missing reasons
+summary/common_metrics_final.csv,statistics.n_certificates.applicable,mean number of certificates: metric defined for this method
+summary/common_metrics_final.csv,statistics.n_certificates.conditional,mean number of certificates: mean is conditional on availability
+summary/common_metrics_final.csv,statistics.n_certificates.mean,mean number of certificates: sample mean over observed trajectories
+summary/common_metrics_final.csv,statistics.n_certificates.sd,mean number of certificates: sample SD (n-1) over observed trajectories
+summary/common_metrics_final.csv,statistics.n_certificates.available_mean,mean number of certificates: same as mean (kept from export)
+summary/common_metrics_final.csv,statistics.n_certificates.available_sd,mean number of certificates: same as sd (kept from export)
+summary/common_metrics_final.csv,statistics.n_certificates.comparison_eligible,mean number of certificates: usable in paired comparisons
+summary/common_metrics_final.csv,outcomes.goal.count,"termination outcome goal: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.goal.n,"termination outcome goal: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.goal.fraction,"termination outcome goal: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.goal.upper95,"termination outcome goal: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.goal.lower95,"termination outcome goal: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.contact.count,"termination outcome contact: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.contact.n,"termination outcome contact: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.contact.fraction,"termination outcome contact: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.contact.upper95,"termination outcome contact: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.contact.lower95,"termination outcome contact: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.infeas.count,"termination outcome infeas: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.infeas.n,"termination outcome infeas: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.infeas.fraction,"termination outcome infeas: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.infeas.upper95,"termination outcome infeas: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,outcomes.infeas.lower95,"termination outcome infeas: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_final.csv,trajectory_events.qcert.total_n,q_cert (false certification) trajectory events: trajectories
+summary/common_metrics_final.csv,trajectory_events.qcert.applicable_n,q_cert (false certification) trajectory events: trajectories where the event is defined
+summary/common_metrics_final.csv,trajectory_events.qcert.confirmed,q_cert (false certification) trajectory events: trajectories with a confirmed event
+summary/common_metrics_final.csv,trajectory_events.qcert.possible,q_cert (false certification) trajectory events: trajectories with a confirmed or numerically undecided event (the printed count)
+summary/common_metrics_final.csv,trajectory_events.qcert.unresolved_trajectories,q_cert (false certification) trajectory events: undecided trajectories
+summary/common_metrics_final.csv,trajectory_events.qcert.confirmed_fraction,q_cert (false certification) trajectory events: confirmed / applicable_n
+summary/common_metrics_final.csv,trajectory_events.qcert.possible_fraction,q_cert (false certification) trajectory events: possible / applicable_n
+summary/common_metrics_final.csv,trajectory_events.qcert.upper95_possible,q_cert (false certification) trajectory events: one-sided 95% Clopper-Pearson upper bound for the possible count (fraction)
+summary/common_metrics_final.csv,trajectory_events.qcert.lower95_confirmed,q_cert (false certification) trajectory events: one-sided 95% lower bound for the confirmed count (fraction)
+summary/common_metrics_final.csv,trajectory_events.qcert.bound,q_cert (false certification) trajectory events: text of the bound rule
+summary/common_metrics_final.csv,trajectory_events.qcert.comparison_eligible,q_cert (false certification) trajectory events: usable in paired comparisons
+summary/common_metrics_final.csv,trajectory_events.qdep.total_n,q_dep (certified but not deployable) trajectory events: trajectories
+summary/common_metrics_final.csv,trajectory_events.qdep.applicable_n,q_dep (certified but not deployable) trajectory events: trajectories where the event is defined
+summary/common_metrics_final.csv,trajectory_events.qdep.confirmed,q_dep (certified but not deployable) trajectory events: trajectories with a confirmed event
+summary/common_metrics_final.csv,trajectory_events.qdep.possible,q_dep (certified but not deployable) trajectory events: trajectories with a confirmed or numerically undecided event (the printed count)
+summary/common_metrics_final.csv,trajectory_events.qdep.unresolved_trajectories,q_dep (certified but not deployable) trajectory events: undecided trajectories
+summary/common_metrics_final.csv,trajectory_events.qdep.confirmed_fraction,q_dep (certified but not deployable) trajectory events: confirmed / applicable_n
+summary/common_metrics_final.csv,trajectory_events.qdep.possible_fraction,q_dep (certified but not deployable) trajectory events: possible / applicable_n
+summary/common_metrics_final.csv,trajectory_events.qdep.upper95_possible,q_dep (certified but not deployable) trajectory events: one-sided 95% Clopper-Pearson upper bound for the possible count (fraction)
+summary/common_metrics_final.csv,trajectory_events.qdep.lower95_confirmed,q_dep (certified but not deployable) trajectory events: one-sided 95% lower bound for the confirmed count (fraction)
+summary/common_metrics_final.csv,trajectory_events.qdep.bound,q_dep (certified but not deployable) trajectory events: text of the bound rule
+summary/common_metrics_final.csv,trajectory_events.qdep.comparison_eligible,q_dep (certified but not deployable) trajectory events: usable in paired comparisons
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.total_n,"realized-transition event q_CBF: total_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.assessed_n,"realized-transition event q_CBF: assessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.unassessed_n,"realized-transition event q_CBF: unassessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.count,"realized-transition event q_CBF: count (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.fraction,"realized-transition event q_CBF: fraction (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.upper95,"realized-transition event q_CBF: upper95 (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_CBF.scope,"realized-transition event q_CBF: scope (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.total_n,"realized-transition event q_unsafe: total_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.assessed_n,"realized-transition event q_unsafe: assessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.unassessed_n,"realized-transition event q_unsafe: unassessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.count,"realized-transition event q_unsafe: count (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.fraction,"realized-transition event q_unsafe: fraction (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.upper95,"realized-transition event q_unsafe: upper95 (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,realized_transition_events.q_unsafe.scope,"realized-transition event q_unsafe: scope (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.total_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.observed_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories with a value"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.missing_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories without a value"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.missing_reasons,"fraction of decisions certified but not deployed, confirmed intervals: JSON counts of missing reasons"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.applicable,"fraction of decisions certified but not deployed, confirmed intervals: metric defined for this method"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.conditional,"fraction of decisions certified but not deployed, confirmed intervals: mean is conditional on availability"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.mean,"fraction of decisions certified but not deployed, confirmed intervals: sample mean over observed trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.sd,"fraction of decisions certified but not deployed, confirmed intervals: sample SD (n-1) over observed trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.available_mean,"fraction of decisions certified but not deployed, confirmed intervals: same as mean (kept from export)"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.available_sd,"fraction of decisions certified but not deployed, confirmed intervals: same as sd (kept from export)"
+summary/common_metrics_final.csv,deployment_decision_fraction.confirmed.comparison_eligible,"fraction of decisions certified but not deployed, confirmed intervals: usable in paired comparisons"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.total_n,"fraction of decisions certified but not deployed, possible intervals: trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.observed_n,"fraction of decisions certified but not deployed, possible intervals: trajectories with a value"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.missing_n,"fraction of decisions certified but not deployed, possible intervals: trajectories without a value"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.missing_reasons,"fraction of decisions certified but not deployed, possible intervals: JSON counts of missing reasons"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.applicable,"fraction of decisions certified but not deployed, possible intervals: metric defined for this method"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.conditional,"fraction of decisions certified but not deployed, possible intervals: mean is conditional on availability"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.mean,"fraction of decisions certified but not deployed, possible intervals: sample mean over observed trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.sd,"fraction of decisions certified but not deployed, possible intervals: sample SD (n-1) over observed trajectories"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.available_mean,"fraction of decisions certified but not deployed, possible intervals: same as mean (kept from export)"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.available_sd,"fraction of decisions certified but not deployed, possible intervals: same as sd (kept from export)"
+summary/common_metrics_final.csv,deployment_decision_fraction.possible.comparison_eligible,"fraction of decisions certified but not deployed, possible intervals: usable in paired comparisons"
+summary/common_metrics_final.csv,deployment_decision_fraction.scope,text
+summary/common_metrics_final.csv,deployment_decision_fraction.resolved,number of decisions with resolved deployment interval
+summary/common_metrics_final.csv,risk_increase_checks.direct.assessed_decisions,"risk-increase bound check (direct): assessed_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.assessed_trajectory,"risk-increase bound check (direct): assessed_trajectory (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.excess_decisions,"risk-increase bound check (direct): excess_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.any_excess,"risk-increase bound check (direct): any_excess (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.total_trajectories,"risk-increase bound check (direct): total_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.unassessed_trajectories,"risk-increase bound check (direct): unassessed_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.direct.is_proof,"risk-increase bound check (direct): is_proof (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.assessed_decisions,"risk-increase bound check (pairwise): assessed_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.assessed_trajectory,"risk-increase bound check (pairwise): assessed_trajectory (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.excess_decisions,"risk-increase bound check (pairwise): excess_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.any_excess,"risk-increase bound check (pairwise): any_excess (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.total_trajectories,"risk-increase bound check (pairwise): total_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.unassessed_trajectories,"risk-increase bound check (pairwise): unassessed_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,risk_increase_checks.pairwise.is_proof,"risk-increase bound check (pairwise): is_proof (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_final.csv,assumption_observed_flags.support_excess_observed,observed counts of assumption-violation flags: support_excess_observed
+summary/common_metrics_final.csv,assumption_observed_flags.fallback_infeasibility_observed,observed counts of assumption-violation flags: fallback_infeasibility_observed
+summary/common_metrics_final.csv,assumption_observed_flags.filter_residual_failure_observed,observed counts of assumption-violation flags: filter_residual_failure_observed
+summary/common_metrics_final.csv,assumption_observed_flags.terminal_fallback_feasibility_unknown,observed counts of assumption-violation flags: terminal_fallback_feasibility_unknown
+summary/common_metrics_final.csv,assumption_observed_flags.missing_tail,observed counts of assumption-violation flags: missing_tail
+summary/common_metrics_final.csv,numerical_ambiguity.deployment_intervals_unresolved,counts of numerically unresolved items: deployment_intervals_unresolved
+summary/common_metrics_final.csv,numerical_ambiguity.certificate_events_unresolved,counts of numerically unresolved items: certificate_events_unresolved
+summary/common_metrics_final.csv,numerical_ambiguity.risk_interval_unresolved,counts of numerically unresolved items: risk_interval_unresolved
+summary/common_metrics_final.csv,numerical_ambiguity.risk_numerical_errors,counts of numerically unresolved items: risk_numerical_errors
+summary/common_metrics_final.csv,assumption_assessed_population.support_decisions,population size over which the assumption flags were assessed: support_decisions
+summary/common_metrics_final.csv,assumption_assessed_population.fallback_decisions,population size over which the assumption flags were assessed: fallback_decisions
+summary/common_metrics_final.csv,assumption_assessed_population.filter_decisions,population size over which the assumption flags were assessed: filter_decisions
+summary/common_metrics_final.csv,assumption_assessed_population.total_trajectories,population size over which the assumption flags were assessed: total_trajectories
+summary/common_metrics_final.csv,assumption_assessed_population.executed_decisions,population size over which the assumption flags were assessed: executed_decisions
+summary/common_metrics_final.csv,termination_counts,"JSON counts of trajectory terminations (goal, contact, infeas)"
+summary/common_metrics_final.csv,runtime_scope,text: runtime is descriptive
+summary/common_metrics_final.csv,scope,text: scope of the cohort
+summary/common_metrics_final.csv,source_counts,JSON counts of the run sources of the 200 seeds
+summary/common_metrics_new_anchors.csv,source,export folder: final (N200_numbers/final) or new_anchors
+summary/common_metrics_new_anchors.csv,view_id,N200 view id (SHA-256) of the declared metric view in metrics.json
+summary/common_metrics_new_anchors.csv,family,"view family: main_grid_200, stress_drift_200 (phi x L_mu), budget_normalizer_200 (b), detailed_200, matched_baselines_200, matched_ACI_200"
+summary/common_metrics_new_anchors.csv,view_label,label of the view
+summary/common_metrics_new_anchors.csv,anchor,new-anchor role (new_top5_role1..5 = T1..T5); empty in final
+summary/common_metrics_new_anchors.csv,anchor_id,anchor id
+summary/common_metrics_new_anchors.csv,role,development
+summary/common_metrics_new_anchors.csv,anchor_alpha0,alpha0 of the anchor setting (new_anchors)
+summary/common_metrics_new_anchors.csv,anchor_alpha,alpha of the anchor setting
+summary/common_metrics_new_anchors.csv,anchor_delta,delta of the anchor setting
+summary/common_metrics_new_anchors.csv,anchor_K,K of the anchor setting
+summary/common_metrics_new_anchors.csv,n100_view_id,view id of the same cell in the sealed N100 export
+summary/common_metrics_new_anchors.csv,seed_first,first seed (970001)
+summary/common_metrics_new_anchors.csv,seed_last,last seed (970200)
+summary/common_metrics_new_anchors.csv,n_seeds,number of seeds = trajectories (200)
+summary/common_metrics_new_anchors.csv,scenario,corridor or maze
+summary/common_metrics_new_anchors.csv,method,"internal method key (Zero margin=c=0, Conservative=c_max, ACI, QT, Unfiltered, V-U, V-D=V-Delta, V-Cd=V-L, V-C)"
+summary/common_metrics_new_anchors.csv,method_display,name printed in the documents
+summary/common_metrics_new_anchors.csv,alpha0,alpha_0 (risk level of the baselines / nominal)
+summary/common_metrics_new_anchors.csv,alpha,alpha (variant risk parameter)
+summary/common_metrics_new_anchors.csv,delta,delta (certification level)
+summary/common_metrics_new_anchors.csv,K,K (test period in decisions; infinity = never re-test)
+summary/common_metrics_new_anchors.csv,L_mu,L_mu (drift constant)
+summary/common_metrics_new_anchors.csv,phi_bound_scale,"phi (bound factor, configuration key bound_scale)"
+summary/common_metrics_new_anchors.csv,b_budget_normalizer,"b (budget normalizer, key budget_normalizer; 2.11 default)"
+summary/common_metrics_new_anchors.csv,rho_buf,rho_buf (0)
+summary/common_metrics_new_anchors.csv,configuration_id,SHA-256 id of the configuration
+summary/common_metrics_new_anchors.csv,population_sha256,SHA-256 of the assessed seed population
+summary/common_metrics_new_anchors.csv,n,trajectories in the cell (200)
+summary/common_metrics_new_anchors.csv,statistics.T_mis.total_n,mission time (s): trajectories
+summary/common_metrics_new_anchors.csv,statistics.T_mis.observed_n,mission time (s): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.T_mis.missing_n,mission time (s): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.T_mis.missing_reasons,mission time (s): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.T_mis.applicable,mission time (s): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.T_mis.conditional,mission time (s): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.T_mis.mean,mission time (s): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.T_mis.sd,mission time (s): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.T_mis.available_mean,mission time (s): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.T_mis.available_sd,mission time (s): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.T_mis.comparison_eligible,mission time (s): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.m_c.total_n,mean robustness margin / c_max: trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_c.observed_n,mean robustness margin / c_max: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.m_c.missing_n,mean robustness margin / c_max: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.m_c.missing_reasons,mean robustness margin / c_max: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.m_c.applicable,mean robustness margin / c_max: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.m_c.conditional,mean robustness margin / c_max: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.m_c.mean,mean robustness margin / c_max: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_c.sd,mean robustness margin / c_max: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_c.available_mean,mean robustness margin / c_max: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_c.available_sd,mean robustness margin / c_max: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_c.comparison_eligible,mean robustness margin / c_max: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.m_Y.total_n,mean barrier loss / c_max: trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_Y.observed_n,mean barrier loss / c_max: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.m_Y.missing_n,mean barrier loss / c_max: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.m_Y.missing_reasons,mean barrier loss / c_max: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.m_Y.applicable,mean barrier loss / c_max: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.m_Y.conditional,mean barrier loss / c_max: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.m_Y.mean,mean barrier loss / c_max: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_Y.sd,mean barrier loss / c_max: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_Y.available_mean,mean barrier loss / c_max: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_Y.available_sd,mean barrier loss / c_max: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_Y.comparison_eligible,mean barrier loss / c_max: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.m_int.total_n,control intervention (stored input coordinates squared): trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_int.observed_n,control intervention (stored input coordinates squared): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.m_int.missing_n,control intervention (stored input coordinates squared): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.m_int.missing_reasons,control intervention (stored input coordinates squared): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.m_int.applicable,control intervention (stored input coordinates squared): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.m_int.conditional,control intervention (stored input coordinates squared): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.m_int.mean,control intervention (stored input coordinates squared): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_int.sd,control intervention (stored input coordinates squared): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.m_int.available_mean,control intervention (stored input coordinates squared): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_int.available_sd,control intervention (stored input coordinates squared): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.m_int.comparison_eligible,control intervention (stored input coordinates squared): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.total_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.observed_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.missing_n,fraction of executed decisions with a CBF violation (print x100 for %): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.missing_reasons,fraction of executed decisions with a CBF violation (print x100 for %): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.applicable,fraction of executed decisions with a CBF violation (print x100 for %): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.conditional,fraction of executed decisions with a CBF violation (print x100 for %): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.mean,fraction of executed decisions with a CBF violation (print x100 for %): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.sd,fraction of executed decisions with a CBF violation (print x100 for %): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.available_mean,fraction of executed decisions with a CBF violation (print x100 for %): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.available_sd,fraction of executed decisions with a CBF violation (print x100 for %): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_CBF.comparison_eligible,fraction of executed decisions with a CBF violation (print x100 for %): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_Y.total_n,fraction of barrier-loss exceedance: trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_Y.observed_n,fraction of barrier-loss exceedance: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_Y.missing_n,fraction of barrier-loss exceedance: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_Y.missing_reasons,fraction of barrier-loss exceedance: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_Y.applicable,fraction of barrier-loss exceedance: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_Y.conditional,fraction of barrier-loss exceedance: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_Y.mean,fraction of barrier-loss exceedance: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_Y.sd,fraction of barrier-loss exceedance: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_Y.available_mean,fraction of barrier-loss exceedance: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_Y.available_sd,fraction of barrier-loss exceedance: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_Y.comparison_eligible,fraction of barrier-loss exceedance: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_use.total_n,fraction of decisions using a smaller margin: trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_use.observed_n,fraction of decisions using a smaller margin: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_use.missing_n,fraction of decisions using a smaller margin: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_use.missing_reasons,fraction of decisions using a smaller margin: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_use.applicable,fraction of decisions using a smaller margin: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_use.conditional,fraction of decisions using a smaller margin: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_use.mean,fraction of decisions using a smaller margin: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_use.sd,fraction of decisions using a smaller margin: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_use.available_mean,fraction of decisions using a smaller margin: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_use.available_sd,fraction of decisions using a smaller margin: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_use.comparison_eligible,fraction of decisions using a smaller margin: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.total_n,fraction with a safe-set violation (print x100 for %): trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.observed_n,fraction with a safe-set violation (print x100 for %): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.missing_n,fraction with a safe-set violation (print x100 for %): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.missing_reasons,fraction with a safe-set violation (print x100 for %): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.applicable,fraction with a safe-set violation (print x100 for %): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.conditional,fraction with a safe-set violation (print x100 for %): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.mean,fraction with a safe-set violation (print x100 for %): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.sd,fraction with a safe-set violation (print x100 for %): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.available_mean,fraction with a safe-set violation (print x100 for %): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.available_sd,fraction with a safe-set violation (print x100 for %): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_unsafe.comparison_eligible,fraction with a safe-set violation (print x100 for %): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.total_n,fraction of decisions with no certificate: trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.observed_n,fraction of decisions with no certificate: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.missing_n,fraction of decisions with no certificate: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.missing_reasons,fraction of decisions with no certificate: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.applicable,fraction of decisions with no certificate: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.conditional,fraction of decisions with no certificate: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.mean,fraction of decisions with no certificate: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.sd,fraction of decisions with no certificate: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.available_mean,fraction of decisions with no certificate: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.available_sd,fraction of decisions with no certificate: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_nocert.comparison_eligible,fraction of decisions with no certificate: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.total_n,fraction certified but not deployable (q_dep): trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.observed_n,fraction certified but not deployable (q_dep): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.missing_n,fraction certified but not deployable (q_dep): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.missing_reasons,fraction certified but not deployable (q_dep): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.applicable,fraction certified but not deployable (q_dep): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.conditional,fraction certified but not deployable (q_dep): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.mean,fraction certified but not deployable (q_dep): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.sd,fraction certified but not deployable (q_dep): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.available_mean,fraction certified but not deployable (q_dep): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.available_sd,fraction certified but not deployable (q_dep): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.q_notrans.comparison_eligible,fraction certified but not deployable (q_dep): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.tau_use.total_n,mean time of first smaller-margin use (s): trajectories
+summary/common_metrics_new_anchors.csv,statistics.tau_use.observed_n,mean time of first smaller-margin use (s): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.tau_use.missing_n,mean time of first smaller-margin use (s): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.tau_use.missing_reasons,mean time of first smaller-margin use (s): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.tau_use.applicable,mean time of first smaller-margin use (s): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.tau_use.conditional,mean time of first smaller-margin use (s): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.tau_use.mean,mean time of first smaller-margin use (s): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.tau_use.sd,mean time of first smaller-margin use (s): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.tau_use.available_mean,mean time of first smaller-margin use (s): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.tau_use.available_sd,mean time of first smaller-margin use (s): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.tau_use.comparison_eligible,mean time of first smaller-margin use (s): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.p_max.total_n,mean of the per-trajectory peak estimated exceedance risk: trajectories
+summary/common_metrics_new_anchors.csv,statistics.p_max.observed_n,mean of the per-trajectory peak estimated exceedance risk: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.p_max.missing_n,mean of the per-trajectory peak estimated exceedance risk: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.p_max.missing_reasons,mean of the per-trajectory peak estimated exceedance risk: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.p_max.applicable,mean of the per-trajectory peak estimated exceedance risk: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.p_max.conditional,mean of the per-trajectory peak estimated exceedance risk: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.p_max.mean,mean of the per-trajectory peak estimated exceedance risk: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.p_max.sd,mean of the per-trajectory peak estimated exceedance risk: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.p_max.available_mean,mean of the per-trajectory peak estimated exceedance risk: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.p_max.available_sd,mean of the per-trajectory peak estimated exceedance risk: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.p_max.comparison_eligible,mean of the per-trajectory peak estimated exceedance risk: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.total_n,controller wall time per decision (ms; descriptive): trajectories
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.observed_n,controller wall time per decision (ms; descriptive): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.missing_n,controller wall time per decision (ms; descriptive): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.missing_reasons,controller wall time per decision (ms; descriptive): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.applicable,controller wall time per decision (ms; descriptive): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.conditional,controller wall time per decision (ms; descriptive): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.mean,controller wall time per decision (ms; descriptive): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.sd,controller wall time per decision (ms; descriptive): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.available_mean,controller wall time per decision (ms; descriptive): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.available_sd,controller wall time per decision (ms; descriptive): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.runtime_ms.comparison_eligible,controller wall time per decision (ms; descriptive): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.h_min.total_n,mean minimum barrier value (m): trajectories
+summary/common_metrics_new_anchors.csv,statistics.h_min.observed_n,mean minimum barrier value (m): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.h_min.missing_n,mean minimum barrier value (m): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.h_min.missing_reasons,mean minimum barrier value (m): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.h_min.applicable,mean minimum barrier value (m): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.h_min.conditional,mean minimum barrier value (m): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.h_min.mean,mean minimum barrier value (m): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.h_min.sd,mean minimum barrier value (m): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.h_min.available_mean,mean minimum barrier value (m): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.h_min.available_sd,mean minimum barrier value (m): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.h_min.comparison_eligible,mean minimum barrier value (m): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.total_n,mean minimum clearance (m): trajectories
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.observed_n,mean minimum clearance (m): trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.missing_n,mean minimum clearance (m): trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.missing_reasons,mean minimum clearance (m): JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.applicable,mean minimum clearance (m): metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.conditional,mean minimum clearance (m): mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.mean,mean minimum clearance (m): sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.sd,mean minimum clearance (m): sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.available_mean,mean minimum clearance (m): same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.available_sd,mean minimum clearance (m): same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.clearance_min.comparison_eligible,mean minimum clearance (m): usable in paired comparisons
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.total_n,mean number of certificates: trajectories
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.observed_n,mean number of certificates: trajectories with a value
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.missing_n,mean number of certificates: trajectories without a value
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.missing_reasons,mean number of certificates: JSON counts of missing reasons
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.applicable,mean number of certificates: metric defined for this method
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.conditional,mean number of certificates: mean is conditional on availability
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.mean,mean number of certificates: sample mean over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.sd,mean number of certificates: sample SD (n-1) over observed trajectories
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.available_mean,mean number of certificates: same as mean (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.available_sd,mean number of certificates: same as sd (kept from export)
+summary/common_metrics_new_anchors.csv,statistics.n_certificates.comparison_eligible,mean number of certificates: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,outcomes.goal.count,"termination outcome goal: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.goal.n,"termination outcome goal: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.goal.fraction,"termination outcome goal: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.goal.upper95,"termination outcome goal: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.goal.lower95,"termination outcome goal: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.contact.count,"termination outcome contact: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.contact.n,"termination outcome contact: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.contact.fraction,"termination outcome contact: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.contact.upper95,"termination outcome contact: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.contact.lower95,"termination outcome contact: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.infeas.count,"termination outcome infeas: count (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.infeas.n,"termination outcome infeas: n (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.infeas.fraction,"termination outcome infeas: fraction (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.infeas.upper95,"termination outcome infeas: upper95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,outcomes.infeas.lower95,"termination outcome infeas: lower95 (count of trajectories; fraction, lower95/upper95 binomial bounds)"
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.total_n,q_cert (false certification) trajectory events: trajectories
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.applicable_n,q_cert (false certification) trajectory events: trajectories where the event is defined
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.confirmed,q_cert (false certification) trajectory events: trajectories with a confirmed event
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.possible,q_cert (false certification) trajectory events: trajectories with a confirmed or numerically undecided event (the printed count)
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.unresolved_trajectories,q_cert (false certification) trajectory events: undecided trajectories
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.confirmed_fraction,q_cert (false certification) trajectory events: confirmed / applicable_n
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.possible_fraction,q_cert (false certification) trajectory events: possible / applicable_n
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.upper95_possible,q_cert (false certification) trajectory events: one-sided 95% Clopper-Pearson upper bound for the possible count (fraction)
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.lower95_confirmed,q_cert (false certification) trajectory events: one-sided 95% lower bound for the confirmed count (fraction)
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.bound,q_cert (false certification) trajectory events: text of the bound rule
+summary/common_metrics_new_anchors.csv,trajectory_events.qcert.comparison_eligible,q_cert (false certification) trajectory events: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.total_n,q_dep (certified but not deployable) trajectory events: trajectories
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.applicable_n,q_dep (certified but not deployable) trajectory events: trajectories where the event is defined
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.confirmed,q_dep (certified but not deployable) trajectory events: trajectories with a confirmed event
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.possible,q_dep (certified but not deployable) trajectory events: trajectories with a confirmed or numerically undecided event (the printed count)
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.unresolved_trajectories,q_dep (certified but not deployable) trajectory events: undecided trajectories
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.confirmed_fraction,q_dep (certified but not deployable) trajectory events: confirmed / applicable_n
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.possible_fraction,q_dep (certified but not deployable) trajectory events: possible / applicable_n
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.upper95_possible,q_dep (certified but not deployable) trajectory events: one-sided 95% Clopper-Pearson upper bound for the possible count (fraction)
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.lower95_confirmed,q_dep (certified but not deployable) trajectory events: one-sided 95% lower bound for the confirmed count (fraction)
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.bound,q_dep (certified but not deployable) trajectory events: text of the bound rule
+summary/common_metrics_new_anchors.csv,trajectory_events.qdep.comparison_eligible,q_dep (certified but not deployable) trajectory events: usable in paired comparisons
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.total_n,"realized-transition event q_CBF: total_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.assessed_n,"realized-transition event q_CBF: assessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.unassessed_n,"realized-transition event q_CBF: unassessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.count,"realized-transition event q_CBF: count (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.fraction,"realized-transition event q_CBF: fraction (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.upper95,"realized-transition event q_CBF: upper95 (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_CBF.scope,"realized-transition event q_CBF: scope (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.total_n,"realized-transition event q_unsafe: total_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.assessed_n,"realized-transition event q_unsafe: assessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.unassessed_n,"realized-transition event q_unsafe: unassessed_n (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.count,"realized-transition event q_unsafe: count (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.fraction,"realized-transition event q_unsafe: fraction (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.upper95,"realized-transition event q_unsafe: upper95 (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,realized_transition_events.q_unsafe.scope,"realized-transition event q_unsafe: scope (trajectories with at least one observed event on executed transitions; fraction, upper95 as fractions)"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.total_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.observed_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories with a value"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.missing_n,"fraction of decisions certified but not deployed, confirmed intervals: trajectories without a value"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.missing_reasons,"fraction of decisions certified but not deployed, confirmed intervals: JSON counts of missing reasons"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.applicable,"fraction of decisions certified but not deployed, confirmed intervals: metric defined for this method"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.conditional,"fraction of decisions certified but not deployed, confirmed intervals: mean is conditional on availability"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.mean,"fraction of decisions certified but not deployed, confirmed intervals: sample mean over observed trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.sd,"fraction of decisions certified but not deployed, confirmed intervals: sample SD (n-1) over observed trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.available_mean,"fraction of decisions certified but not deployed, confirmed intervals: same as mean (kept from export)"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.available_sd,"fraction of decisions certified but not deployed, confirmed intervals: same as sd (kept from export)"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.confirmed.comparison_eligible,"fraction of decisions certified but not deployed, confirmed intervals: usable in paired comparisons"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.total_n,"fraction of decisions certified but not deployed, possible intervals: trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.observed_n,"fraction of decisions certified but not deployed, possible intervals: trajectories with a value"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.missing_n,"fraction of decisions certified but not deployed, possible intervals: trajectories without a value"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.missing_reasons,"fraction of decisions certified but not deployed, possible intervals: JSON counts of missing reasons"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.applicable,"fraction of decisions certified but not deployed, possible intervals: metric defined for this method"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.conditional,"fraction of decisions certified but not deployed, possible intervals: mean is conditional on availability"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.mean,"fraction of decisions certified but not deployed, possible intervals: sample mean over observed trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.sd,"fraction of decisions certified but not deployed, possible intervals: sample SD (n-1) over observed trajectories"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.available_mean,"fraction of decisions certified but not deployed, possible intervals: same as mean (kept from export)"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.available_sd,"fraction of decisions certified but not deployed, possible intervals: same as sd (kept from export)"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.possible.comparison_eligible,"fraction of decisions certified but not deployed, possible intervals: usable in paired comparisons"
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.scope,text
+summary/common_metrics_new_anchors.csv,deployment_decision_fraction.resolved,number of decisions with resolved deployment interval
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.assessed_decisions,"risk-increase bound check (direct): assessed_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.assessed_trajectory,"risk-increase bound check (direct): assessed_trajectory (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.excess_decisions,"risk-increase bound check (direct): excess_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.any_excess,"risk-increase bound check (direct): any_excess (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.total_trajectories,"risk-increase bound check (direct): total_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.unassessed_trajectories,"risk-increase bound check (direct): unassessed_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.direct.is_proof,"risk-increase bound check (direct): is_proof (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.assessed_decisions,"risk-increase bound check (pairwise): assessed_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.assessed_trajectory,"risk-increase bound check (pairwise): assessed_trajectory (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.excess_decisions,"risk-increase bound check (pairwise): excess_decisions (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.any_excess,"risk-increase bound check (pairwise): any_excess (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.total_trajectories,"risk-increase bound check (pairwise): total_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.unassessed_trajectories,"risk-increase bound check (pairwise): unassessed_trajectories (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,risk_increase_checks.pairwise.is_proof,"risk-increase bound check (pairwise): is_proof (decisions / trajectories; is_proof=false: numerical check, not a proof)"
+summary/common_metrics_new_anchors.csv,assumption_observed_flags.support_excess_observed,observed counts of assumption-violation flags: support_excess_observed
+summary/common_metrics_new_anchors.csv,assumption_observed_flags.fallback_infeasibility_observed,observed counts of assumption-violation flags: fallback_infeasibility_observed
+summary/common_metrics_new_anchors.csv,assumption_observed_flags.filter_residual_failure_observed,observed counts of assumption-violation flags: filter_residual_failure_observed
+summary/common_metrics_new_anchors.csv,assumption_observed_flags.terminal_fallback_feasibility_unknown,observed counts of assumption-violation flags: terminal_fallback_feasibility_unknown
+summary/common_metrics_new_anchors.csv,assumption_observed_flags.missing_tail,observed counts of assumption-violation flags: missing_tail
+summary/common_metrics_new_anchors.csv,numerical_ambiguity.deployment_intervals_unresolved,counts of numerically unresolved items: deployment_intervals_unresolved
+summary/common_metrics_new_anchors.csv,numerical_ambiguity.certificate_events_unresolved,counts of numerically unresolved items: certificate_events_unresolved
+summary/common_metrics_new_anchors.csv,numerical_ambiguity.risk_interval_unresolved,counts of numerically unresolved items: risk_interval_unresolved
+summary/common_metrics_new_anchors.csv,numerical_ambiguity.risk_numerical_errors,counts of numerically unresolved items: risk_numerical_errors
+summary/common_metrics_new_anchors.csv,assumption_assessed_population.support_decisions,population size over which the assumption flags were assessed: support_decisions
+summary/common_metrics_new_anchors.csv,assumption_assessed_population.fallback_decisions,population size over which the assumption flags were assessed: fallback_decisions
+summary/common_metrics_new_anchors.csv,assumption_assessed_population.filter_decisions,population size over which the assumption flags were assessed: filter_decisions
+summary/common_metrics_new_anchors.csv,assumption_assessed_population.total_trajectories,population size over which the assumption flags were assessed: total_trajectories
+summary/common_metrics_new_anchors.csv,assumption_assessed_population.executed_decisions,population size over which the assumption flags were assessed: executed_decisions
+summary/common_metrics_new_anchors.csv,termination_counts,"JSON counts of trajectory terminations (goal, contact, infeas)"
+summary/common_metrics_new_anchors.csv,runtime_scope,text: runtime is descriptive
+summary/common_metrics_new_anchors.csv,scope,text: scope of the cohort
+summary/common_metrics_new_anchors.csv,source_counts,JSON counts of the run sources of the 200 seeds
+summary/temporal_metrics_final.csv,source,export folder: final (N200_numbers/final) or new_anchors
+summary/temporal_metrics_final.csv,view_id,N200 view id (SHA-256) of the declared metric view in metrics.json
+summary/temporal_metrics_final.csv,family,"view family: main_grid_200, stress_drift_200 (phi x L_mu), budget_normalizer_200 (b), detailed_200, matched_baselines_200, matched_ACI_200"
+summary/temporal_metrics_final.csv,view_label,label of the view
+summary/temporal_metrics_final.csv,anchor,new-anchor role (new_top5_role1..5 = T1..T5); empty in final
+summary/temporal_metrics_final.csv,anchor_id,anchor id
+summary/temporal_metrics_final.csv,anchor_alpha0,alpha0 of the anchor setting (new_anchors)
+summary/temporal_metrics_final.csv,anchor_alpha,alpha of the anchor setting
+summary/temporal_metrics_final.csv,anchor_delta,delta of the anchor setting
+summary/temporal_metrics_final.csv,anchor_K,K of the anchor setting
+summary/temporal_metrics_final.csv,scenario,corridor or maze
+summary/temporal_metrics_final.csv,method,"internal method key (Zero margin=c=0, Conservative=c_max, ACI, QT, Unfiltered, V-U, V-D=V-Delta, V-Cd=V-L, V-C)"
+summary/temporal_metrics_final.csv,method_display,name printed in the documents
+summary/temporal_metrics_final.csv,alpha0,alpha_0 (risk level of the baselines / nominal)
+summary/temporal_metrics_final.csv,alpha,alpha (variant risk parameter)
+summary/temporal_metrics_final.csv,delta,delta (certification level)
+summary/temporal_metrics_final.csv,K,K (test period in decisions; infinity = never re-test)
+summary/temporal_metrics_final.csv,L_mu,L_mu (drift constant)
+summary/temporal_metrics_final.csv,phi_bound_scale,"phi (bound factor, configuration key bound_scale)"
+summary/temporal_metrics_final.csv,b_budget_normalizer,"b (budget normalizer, key budget_normalizer; 2.11 default)"
+summary/temporal_metrics_final.csv,rho_buf,rho_buf (0)
+summary/temporal_metrics_final.csv,configuration_id,SHA-256 id of the configuration
+summary/temporal_metrics_final.csv,n,trajectories in the cell (200)
+summary/temporal_metrics_final.csv,comparison_eligible,export flag: cell may be compared as a paired view
+summary/temporal_metrics_final.csv,statistics.total_n,trajectories
+summary/temporal_metrics_final.csv,statistics.prefix_decisions,decisions in the fixed prefix (200)
+summary/temporal_metrics_final.csv,statistics.population,population note
+summary/temporal_metrics_final.csv,statistics.normalized_margin.total_n,normalized_margin: total_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.normalized_margin.assessed_n,normalized_margin: assessed_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.normalized_margin.missing_reasons,normalized_margin: missing_reasons (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.normalized_margin.temporal_variance.n,"normalized margin, temporal variance over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.temporal_variance.mean,"normalized margin, temporal variance over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.temporal_variance.sd,"normalized margin, temporal variance over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.temporal_variance.minimum,"normalized margin, temporal variance over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.temporal_variance.maximum,"normalized margin, temporal variance over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.step_rms.n,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.step_rms.mean,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.step_rms.sd,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.step_rms.minimum,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.normalized_margin.step_rms.maximum,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.total_n,estimated_applied_risk: total_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.assessed_n,estimated_applied_risk: assessed_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.missing_reasons,estimated_applied_risk: missing_reasons (assessed trajectories / missing reasons)
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.temporal_variance.n,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.temporal_variance.mean,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.temporal_variance.sd,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.temporal_variance.minimum,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.temporal_variance.maximum,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.step_rms.n,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.step_rms.mean,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.step_rms.sd,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.step_rms.minimum,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_final.csv,statistics.estimated_applied_risk.step_rms.maximum,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,source,export folder: final (N200_numbers/final) or new_anchors
+summary/temporal_metrics_new_anchors.csv,view_id,N200 view id (SHA-256) of the declared metric view in metrics.json
+summary/temporal_metrics_new_anchors.csv,family,"view family: main_grid_200, stress_drift_200 (phi x L_mu), budget_normalizer_200 (b), detailed_200, matched_baselines_200, matched_ACI_200"
+summary/temporal_metrics_new_anchors.csv,view_label,label of the view
+summary/temporal_metrics_new_anchors.csv,anchor,new-anchor role (new_top5_role1..5 = T1..T5); empty in final
+summary/temporal_metrics_new_anchors.csv,anchor_id,anchor id
+summary/temporal_metrics_new_anchors.csv,anchor_alpha0,alpha0 of the anchor setting (new_anchors)
+summary/temporal_metrics_new_anchors.csv,anchor_alpha,alpha of the anchor setting
+summary/temporal_metrics_new_anchors.csv,anchor_delta,delta of the anchor setting
+summary/temporal_metrics_new_anchors.csv,anchor_K,K of the anchor setting
+summary/temporal_metrics_new_anchors.csv,scenario,corridor or maze
+summary/temporal_metrics_new_anchors.csv,method,"internal method key (Zero margin=c=0, Conservative=c_max, ACI, QT, Unfiltered, V-U, V-D=V-Delta, V-Cd=V-L, V-C)"
+summary/temporal_metrics_new_anchors.csv,method_display,name printed in the documents
+summary/temporal_metrics_new_anchors.csv,alpha0,alpha_0 (risk level of the baselines / nominal)
+summary/temporal_metrics_new_anchors.csv,alpha,alpha (variant risk parameter)
+summary/temporal_metrics_new_anchors.csv,delta,delta (certification level)
+summary/temporal_metrics_new_anchors.csv,K,K (test period in decisions; infinity = never re-test)
+summary/temporal_metrics_new_anchors.csv,L_mu,L_mu (drift constant)
+summary/temporal_metrics_new_anchors.csv,phi_bound_scale,"phi (bound factor, configuration key bound_scale)"
+summary/temporal_metrics_new_anchors.csv,b_budget_normalizer,"b (budget normalizer, key budget_normalizer; 2.11 default)"
+summary/temporal_metrics_new_anchors.csv,rho_buf,rho_buf (0)
+summary/temporal_metrics_new_anchors.csv,configuration_id,SHA-256 id of the configuration
+summary/temporal_metrics_new_anchors.csv,n,trajectories in the cell (200)
+summary/temporal_metrics_new_anchors.csv,comparison_eligible,export flag: cell may be compared as a paired view
+summary/temporal_metrics_new_anchors.csv,statistics.total_n,trajectories
+summary/temporal_metrics_new_anchors.csv,statistics.prefix_decisions,decisions in the fixed prefix (200)
+summary/temporal_metrics_new_anchors.csv,statistics.population,population note
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.total_n,normalized_margin: total_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.assessed_n,normalized_margin: assessed_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.missing_reasons,normalized_margin: missing_reasons (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.temporal_variance.n,"normalized margin, temporal variance over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.temporal_variance.mean,"normalized margin, temporal variance over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.temporal_variance.sd,"normalized margin, temporal variance over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.temporal_variance.minimum,"normalized margin, temporal variance over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.temporal_variance.maximum,"normalized margin, temporal variance over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.step_rms.n,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.step_rms.mean,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.step_rms.sd,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.step_rms.minimum,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.normalized_margin.step_rms.maximum,"normalized margin, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.total_n,estimated_applied_risk: total_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.assessed_n,estimated_applied_risk: assessed_n (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.missing_reasons,estimated_applied_risk: missing_reasons (assessed trajectories / missing reasons)
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.temporal_variance.n,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.temporal_variance.mean,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.temporal_variance.sd,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.temporal_variance.minimum,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.temporal_variance.maximum,"estimated applied risk, temporal variance over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.step_rms.n,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: n (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.step_rms.mean,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: mean (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.step_rms.sd,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: sd (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.step_rms.minimum,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: minimum (n, mean, sample SD, min, max)"
+summary/temporal_metrics_new_anchors.csv,statistics.estimated_applied_risk.step_rms.maximum,"estimated applied risk, step RMS (root mean square of consecutive differences) over the first 200 decisions, across trajectories: maximum (n, mean, sample SD, min, max)"
