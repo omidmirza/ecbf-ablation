@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.bak*
+.DS_Store
+out_paper/
+out_report/

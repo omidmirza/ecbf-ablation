@@ -1,0 +1,17 @@
+% N200 catalog, report style: the ablation-report preamble (article 11 pt, Times, geometry letterpaper margin 0.75in
+% = \textwidth 505.89 pt; report_helper with n200_assets). Compile from the paper source root (build_catalog.py does).
+\documentclass[11pt]{article}
+\pdfoutput=1
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,labelsep=colon,justification=justified,singlelinecheck=false,aboveskip=4pt,belowskip=2pt]{caption}
+\usepackage{subcaption}
+\usepackage{booktabs,array}
+\usepackage{placeins}
+\usepackage{setspace}
+\usepackage[letterpaper,margin=0.75in]{geometry}\usepackage{etoolbox}
+\usepackage{times}
+\input{report/report_helper}
+\input{report/template/compact_envs}
+\input{catalog/catalog_macros}
+\newcommand{\catsubsub}[1]{\subsubsection{#1}}
+\AtBeginDocument{\renewcommand{\baselinestretch}{0.97}\raggedbottom}

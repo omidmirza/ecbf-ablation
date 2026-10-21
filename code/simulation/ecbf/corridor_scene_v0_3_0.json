@@ -1,0 +1,97 @@
+{
+ "schema": "corridor_scene_v1",
+ "description": "Corridor scene: 15 m x 2 m lane with eight cones (centres as in Table 2 and radius as in Table 1 of the ablation report). Units m, deg.",
+ "course": {
+  "x_min": 0.0,
+  "x_max": 15.0,
+  "y_min": 0.0,
+  "y_max": 2.0,
+  "centre_line_y": 1.0,
+  "surface": "asphalt"
+ },
+ "apron": {
+  "width": 0.6,
+  "pattern": "red_white_alternating",
+  "vertical_barrier": false,
+  "note": "flat runoff; the course edge is a barrier constraint"
+ },
+ "markings": {
+  "edge_lines": {
+   "inset": 0.12,
+   "colour": "white",
+   "style": "solid"
+  },
+  "centre_line": {
+   "y": 1.0,
+   "colour": "white",
+   "style": "dashed",
+   "dash_length": 0.9,
+   "dash_period": 1.5
+  },
+  "decorative_only": true
+ },
+ "cone_radius": 0.305,
+ "cones": [
+  {
+   "label": 1,
+   "x": 2.4,
+   "y": 0.45
+  },
+  {
+   "label": 2,
+   "x": 4.49,
+   "y": 1.51
+  },
+  {
+   "label": 3,
+   "x": 6.2,
+   "y": 0.55
+  },
+  {
+   "label": 7,
+   "x": 7.55,
+   "y": 1.55
+  },
+  {
+   "label": 4,
+   "x": 8.9,
+   "y": 0.55
+  },
+  {
+   "label": 5,
+   "x": 10.4,
+   "y": 1.35
+  },
+  {
+   "label": 6,
+   "x": 11.85,
+   "y": 0.46
+  },
+  {
+   "label": 8,
+   "x": 13.25,
+   "y": 1.45
+  }
+ ],
+ "skirt": {
+  "enabled": false,
+  "angle_deg": 55.0,
+  "note": "each cone is the disc of radius cone_radius about its centre"
+ },
+ "goal": {
+  "x": 14.4,
+  "y": 1.0,
+  "tol": 0.25
+ },
+ "start_box": {
+  "x": [
+   0.3,
+   1.1
+  ],
+  "y": [
+   0.5,
+   1.5
+  ],
+  "heading_deg": 15.0
+ }
+}
